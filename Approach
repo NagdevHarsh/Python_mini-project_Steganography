@@ -1,0 +1,49 @@
+Approach for Image Steganography Using LSB Technique
+1. Problem Statement:
+The main goal of this project is to hide secret text messages inside images using steganography, particularly the Least Significant Bit (LSB) technique. This method allows us to embed information in a way that is imperceptible to the human eye, ensuring confidentiality while retaining the original appearance of the image.
+
+2. Objective:
+To develop a Python-based application with a graphical user interface (GUI) that:
+Hides a text message in an image using the LSB technique.
+Extracts hidden messages from an image when needed.
+Ensures the changes to the image are invisible, preserving the original visual quality.
+
+3. Methodology:
+Step 1: Understanding Steganography and LSB Technique
+Steganography involves embedding secret data inside non-secret files. In this project, the secret data (text) is hidden inside an image.
+The Least Significant Bit (LSB) method modifies the least important bits in each pixel’s Red, Green, and Blue (RGB) values. By changing only the LSB, the visible color of the pixel remains almost identical to its original state, so the hidden message doesn’t distort the image.
+
+Step 2: Tools and Libraries Used
+Python: The programming language used to implement the steganography system.
+Tkinter: For creating the graphical user interface (GUI).
+PIL (Python Imaging Library): For opening and manipulating image files.
+Stegano Library: For the steganography operations (hiding and revealing text in images).
+
+Step 3: Hiding the Message (Data Embedding)
+The user selects an image (e.g., premmandir.png) from the file system.
+The user types a secret message (e.g., harsh) into a text box.
+The program converts the message into a binary format (1s and 0s).
+The binary digits are embedded into the least significant bits of the image’s pixel values using the lsb.hide() function from the Stegano library.
+A modified image is created that contains the hidden message but looks identical to the original image.
+
+Step 4: Saving the Modified Image
+The modified image (e.g., premmandir_hidden.png) is saved to the file system, with the secret message embedded in it.
+
+Step 5: Revealing the Hidden Message
+When the user selects the modified image and clicks "Show Data," the program uses the lsb.reveal() function to extract the least significant bits from the image’s pixels.
+The hidden bits are converted back into readable text, and the message (harsh) is displayed on the GUI.
+
+4. Graphical User Interface (GUI) Workflow
+Open Image: Allows the user to select an image file (PNG, JPG) from their computer.
+Hide Data: Hides the user-input text message in the selected image using LSB steganography.
+Save Image: Saves the modified image with the hidden data.
+Show Data: Extracts and reveals the hidden message from the selected image.
+
+5. Benefits of the LSB Technique
+Simplicity: The technique is simple to implement and computationally efficient.
+Invisibility: Changes made to the image are imperceptible to the human eye, ensuring the message remains hidden.
+Image Size: The size of the image remains nearly the same, and the visual quality of the image is preserved.
+
+6. Use Cases
+Confidential Communication: Messages can be securely shared in images without raising suspicion.
+Watermarking: The technique can be used to embed watermarks in digital images to protect intellectual property.
